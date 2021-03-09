@@ -8,6 +8,8 @@ You'll need to have [Git](https://git-scm.com/downloads) and [Godot](https://god
 
 - If you are new to Git, we strongly recommend going through the `Beginner`, `Getting Started`, and `Collaborating` sections of the phenomenal [Atlassian Git tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control). Note that we will be using GitHub instead of Bitbucket. We will be using the [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) in this project to manage branches and releases.
 
+- If you are new to Godot, we strongly recommend the [Godot tutorial](https://docs.godotengine.org/en/latest/getting_started/introduction/index.html). It's a fantastic guide to getting started with the game engine.
+
 - On a Mac, to open Godot, you may need to go to the `Applications` folder, right click `Godot`, and then click `Open`.
 
 Join the @osa-computer-society/osa-epic-cool-thing team to get access to this repository. Clone this repository.
@@ -17,3 +19,9 @@ Open Godot to the main Project Manager. Click `Import` in the right sidebar. In 
 Please follow the [Gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) when creating branches and pull requests.
 
 To suggest a new feature, go to the [`Issues` tab](https://github.com/osa-computer-society/osa-epic-cool-thing/issues) and open a new issue.
+
+## Contributing
+
+Please write scripts using `GDScript`.
+
+Most importantly, have fun!
