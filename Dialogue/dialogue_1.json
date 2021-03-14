@@ -8,18 +8,19 @@
 			"name"    : "John",
 			"text": "Want more Dialogue?\n Ye",
 			"next_id" : 1,
-			"choices" : [
-				
+			"choices": [
+
 				{
-					"text"    : "Yes",
-					"next_id" : 1
+					"text": "Yes",
+					"next_id": 1
 				},
 
 				{
-					"text"    : "No",
-					"next_id" : -1
+					"text": "No",
+					"next_id": -1
 				}
-			]
+			],
+			"mood":  "neutral"
 		},
 
 		{
@@ -27,7 +28,8 @@
 			"name"    : "Josh",
 			"text"    : "Good for you!",
 			"next_id" : -1,
-			"choices" : []
+			"choices": [],
+			"mood":  "none"
 		}
 
 

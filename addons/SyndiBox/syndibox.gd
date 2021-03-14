@@ -60,8 +60,8 @@ extends ReferenceRect
 # Exported
 export(String, MULTILINE) var DIALOG # Dialog
 export(String) var CHARACTER_NAME # Character name
-export(Vector2) var NAME_OFFSET # sets where the name is printed
-export(Vector2) var PROFILE_OFFSET # sets where the name is printed
+#export(Vector2) var NAME_OFFSET # sets where the name is printed
+#export(Vector2) var PROFILE_OFFSET # sets where the name is printed
 export(String, FILE, "*.png, *.jpg") var CHARACTER_PROFILE # Character profile
 export(bool) var AUTO_ADVANCE = false # Auto-advance setting
 export(int) var AUTO_ADVANCE_SPEED = 120 # How long should before auto-advance in steps (40 per second)
@@ -168,10 +168,10 @@ func _ready(): # Called when ready.
 	# Create profile if available.
 	profile = Sprite.new()
 	profile.set_centered(false)
-	profile.set("position",profile.position + PROFILE_OFFSET) #+ Vector2((anchor_right / 2) + 5, (anchor_top / 2) + 5))#Vector2(-(anchor_left / 2) + 5, (anchor_bottom / 2) + 5))
+	profile.set("position",profile.position + Vector2((anchor_right / 2) + 5, (anchor_top / 2) + 5))#Vector2(-(anchor_left / 2) + 5, (anchor_bottom / 2) + 5))
 	add_child(profile)
 	prof_label = Label.new()
-	prof_label.set("rect_position",prof_label.rect_position + NAME_OFFSET)#Vector2(16,-38))
+	prof_label.set("rect_position",prof_label.rect_position)#Vector2(16,-38))
 	add_child(prof_label)
 	# Set these variables to their appropriate exports.
 	cur_string = strings[cur_set]
@@ -723,7 +723,7 @@ func print_dialog(string): # Called on draw
 			if CHARACTER_PROFILE != null:
 				x_offset = profile.get_rect().size.x + 5
 			else:
-				x_offset = 0
+				x_offset = 40
 		else:
 			prof_label.set_text("")
 			profile.set_texture(null)
