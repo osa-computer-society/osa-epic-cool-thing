@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/DialogueController.gd" type="Script" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interactable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/enemy.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,7 +12,17 @@
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource( 1 )
 dialogue_path = "res://Dialogue/dialogue_1.json"
+interact_script = NodePath("InteractZone")
+
+[node name="InteractZone" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 32.625, -0.125 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( 32.8125, 0.1875 )
+texture = ExtResource( 4 )
 
 [editable path="Player"]
 
 [editable path="Player/DialogueBox"]
+
+[editable path="Node2D/InteractZone"]

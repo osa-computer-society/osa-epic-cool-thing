@@ -1,6 +1,8 @@
 extends Node
 
 export(String, FILE, "*.json") var dialogue_path = ""
+export (bool) var needs_interact = true
+export (NodePath) var interact_script
 
 var repeated = false
 
@@ -50,8 +52,10 @@ func _ready():
 		choices_container = choices_box.get_child(0)
 		dialogue_box.connect("text_finished", self, "advance_dialogue")
 		dialogue_box.connect("turn_on_choices", self, "turn_on_choice_box")
-		#syndibox = dialogue_box.get_script()
-		start_dialogue()
+		if needs_interact:
+			interact_script = get_node(interact_script)
+			print()
+			interact_script.connect("interact", self, "start_dialogue")
 
 func update_ui():
 	#print(current_node_name)

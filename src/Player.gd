@@ -10,6 +10,8 @@ var treasures := 0
 var extents : Vector2
 var dead := false
 
+var interact_in_range = []
+
 func _ready():
 	#Global.player = self
 	pass
@@ -58,18 +60,18 @@ func enable():
 	$CollisionShape2D.disabled = false
 
 
-func count_treasures():
-	treasures = 0
-	for level in Global.treasures:
-		treasures += Global.treasures[level].size()
-	Global.emit_signal("update_treasure")
-
-
-func add_treasure():
-	treasures += 1
-	Global.emit_signal("update_treasure")
-	if treasures >= Global.ALL_TREASURES:
-		emit_signal("won")
+#func count_treasures():
+#	treasures = 0
+#	for level in Global.treasures:
+#		treasures += Global.treasures[level].size()
+#	Global.emit_signal("update_treasure")
+#
+#
+#func add_treasure():
+#	treasures += 1
+#	Global.emit_signal("update_treasure")
+#	if treasures >= Global.ALL_TREASURES:
+#		emit_signal("won")
 
 
 func update_camera_limits(rect : Rect2):
@@ -77,3 +79,7 @@ func update_camera_limits(rect : Rect2):
 	$Camera2D.limit_left = rect.position.x
 	$Camera2D.limit_bottom = rect.end.y
 	$Camera2D.limit_right = rect.end.x
+
+func _input(event):
+	if event.is_action_pressed("interact") and interact_in_range != []:
+		interact_in_range[0]._on_interact()
