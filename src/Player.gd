@@ -10,6 +10,8 @@ var treasures := 0
 var extents : Vector2
 var dead := false
 
+var in_dialogue = false
+
 var interact_in_range = []
 
 func _ready():
@@ -21,14 +23,15 @@ func get_extents():
 
 func get_input():
 	velocity = Vector2()
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= 1
+	if not in_dialogue:
+		if Input.is_action_pressed("ui_right"):
+			velocity.x += 1
+		if Input.is_action_pressed("ui_left"):
+			velocity.x -= 1
+		if Input.is_action_pressed("ui_down"):
+			velocity.y += 1
+		if Input.is_action_pressed("ui_up"):
+			velocity.y -= 1
 	velocity = velocity.normalized() * speed
 
 

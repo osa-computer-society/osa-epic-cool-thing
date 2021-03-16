@@ -8,6 +8,7 @@ var repeated = false
 
 var file = File.new()
 
+var player
 var dialogue_data
 var dialogue_nodes
 var dialogue_box
@@ -49,6 +50,7 @@ func _ready():
 	else:
 		dialogue_data = dialogue_data.result
 		dialogue_nodes = dialogue_data["Nodes"]
+		player = get_node("../Player")
 		dialogue_box = get_node("../Player/DialogueBox/Canvas/SyndiBox")
 		dialogue_box_holder = dialogue_box.get_parent()
 		choices_box = dialogue_box_holder.get_node("Choices")
@@ -94,6 +96,7 @@ func advance_dialogue():
 		update_ui()
 	else:
 		dialogue_box_holder.visible = false
+		player.in_dialogue = false
 	
 func turn_on_choice_box():
 	choices = []
@@ -113,12 +116,14 @@ func turn_on_choice_box():
 	choices_box.visible = true
 	
 func start_dialogue():
-	current_node_id = 0
-	grab_node(current_node_id)
-	if current_node_choices != []:
-		dialogue_box.waiting_for_response = true
-	update_ui()
-	dialogue_box_holder.visible = true
+	if not player.in_dialogue:
+		player.in_dialogue = true
+		current_node_id = 0
+		grab_node(current_node_id)
+		if current_node_choices != []:
+			dialogue_box.waiting_for_response = true
+		update_ui()
+		dialogue_box_holder.visible = true
 	
 func _input(event):
 	if dialogue_box.choice_box_open:
