@@ -2,12 +2,13 @@
 
 [ext_resource path="res://src/DialogueController.gd" type="Script" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Interactable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Interactable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/enemy.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -4.00452 )
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource( 1 )

@@ -5,10 +5,16 @@ var choice_template
 var dialogue_profiles = {}
 var profiles_dir = Directory.new()
 var profile_dir = Directory.new()
+var green_bar
+var yellow_bar
+var red_bar
 
 func _enter_tree():
 	font = load("res://addons/SyndiBox/Assets/TextDefault.tres")
 	choice_template = load("res://src/Choice.tscn")
+	green_bar = load("res://assets/green bar.png")
+	yellow_bar = load("res://assets/yellow bar.png")
+	red_bar = load("res://assets/red bar.png")
 	if profiles_dir.open("res://assets/Profiles") == OK:
 		profiles_dir.list_dir_begin(true)
 		var file_name = profiles_dir.get_next()
@@ -25,7 +31,6 @@ func _enter_tree():
 				profile_dir.list_dir_end()
 			file_name = profiles_dir.get_next()
 		profiles_dir.list_dir_end()
-		print(dialogue_profiles)
-				
+		#print(dialogue_profiles)
 	else:
 		print_debug("Can't open profiles")

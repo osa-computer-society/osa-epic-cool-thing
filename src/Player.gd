@@ -10,14 +10,17 @@ var treasures := 0
 var extents : Vector2
 var dead := false
 
+var happiness = 100
+var max_happiness = 100
+
 var in_dialogue = false
 
 var interact_in_range = []
 
 func _ready():
 	#Global.player = self
-	pass
-
+	update_happiness(happiness)
+	
 func get_extents():
 	return $CollisionShape2D.shape.extents
 
@@ -83,6 +86,14 @@ func update_camera_limits(rect : Rect2):
 	$Camera2D.limit_bottom = rect.end.y
 	$Camera2D.limit_right = rect.end.x
 
+func update_happiness(new_happiness):
+	happiness = new_happiness
+	$HUD.update_bar("Happiness", new_happiness, max_happiness)
+
 func _input(event):
-	if event.is_action_pressed("interact") and interact_in_range != []:
-		interact_in_range[0]._on_interact()
+	if event.is_action_pressed("ui_down"):
+		update_happiness(max(happiness - 10, 0))
+	elif event.is_action_pressed("ui_up"):
+		update_happiness(min(happiness + 5, 100))
+	if event.is_action_pressed("interact") and interact_in_range != [] and not in_dialogue:
+		interact_in_range[0]._on_interact() 
