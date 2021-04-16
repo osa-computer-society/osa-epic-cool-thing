@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/mago32.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/PngItem_5152659.png-9655eda30c16073fecf430349a6d165d.stex"
+
+[node name="Label" type="Label"]
+margin_top = -1.0
+margin_right = 152.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 1 )
+text = "sdfsdfsdfsdfsdfsdfs"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pointer" type="Sprite" parent="."]
+visible = false
+position = Vector2( -20.3549, 28.845 )
+scale = Vector2( 0.05, 0.05 )
+texture = SubResource( 1 )
