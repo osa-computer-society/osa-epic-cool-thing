@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://mainMenu/mainMenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://mainMenu/neuropol x rg.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://mainMenu/mainMenuScene.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="mainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mainPanel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="mainPanel"]
+margin_left = 128.0
+margin_top = 144.0
+margin_right = 896.0
+margin_bottom = 205.0
+theme = SubResource( 2 )
+text = "OSA EPIC COOL THING"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playBut" type="Button" parent="mainPanel"]
+margin_left = 424.0
+margin_top = 296.0
+margin_right = 600.0
+margin_bottom = 344.0
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="insBut" type="Button" parent="mainPanel"]
+margin_left = 336.0
+margin_top = 384.0
+margin_right = 688.0
+margin_bottom = 432.0
+text = "INSTRUCTIONS"
+[connection signal="pressed" from="mainPanel/playBut" to="." method="_on_playBut_pressed"]
+[connection signal="pressed" from="mainPanel/insBut" to="." method="_on_insBut_pressed"]

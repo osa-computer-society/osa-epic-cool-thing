@@ -20,9 +20,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="osa cool thing"
+config/name="OSA Epic Cool Thing"
 config/description="very cool"
 config/icon="res://assets/obstacle.png"
+run/main_scene="res://mainMenu/mainMenuScene.tscn"
 
 [autoload]
 
