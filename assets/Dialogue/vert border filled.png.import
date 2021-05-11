@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red bar.png-dd003251a9e1ef4b4d304f62eda77039.stex"
+path="res://.import/vert border filled.png-a2027ac8c7a4f77ddaae87faa3bcc76d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/red bar.png"
-dest_files=[ "res://.import/red bar.png-dd003251a9e1ef4b4d304f62eda77039.stex" ]
+source_file="res://assets/Dialogue/vert border filled.png"
+dest_files=[ "res://.import/vert border filled.png-a2027ac8c7a4f77ddaae87faa3bcc76d.stex" ]
 
 [params]
 

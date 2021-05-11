@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/sword-hit.wav-bb3cbce7bce97e7d29f25259884a8d3d.sample"
+path="res://.import/coin-flip.wav-e0d07bfb8fe7694e0ac4fbf2596a54e1.sample"
 
 [deps]
 
-source_file="res://assets/sword-hit.wav"
-dest_files=[ "res://.import/sword-hit.wav-bb3cbce7bce97e7d29f25259884a8d3d.sample" ]
+source_file="res://assets/Dialogue/coin-flip.wav"
+dest_files=[ "res://.import/coin-flip.wav-e0d07bfb8fe7694e0ac4fbf2596a54e1.sample" ]
 
 [params]
 

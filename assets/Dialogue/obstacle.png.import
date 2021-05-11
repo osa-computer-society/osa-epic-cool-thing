@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/green bar.png-d6987ed38be47894ec3b6a75d61817a2.stex"
+path="res://.import/obstacle.png-b1aa0b2807b836f906b4da5203f6caf7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/green bar.png"
-dest_files=[ "res://.import/green bar.png-d6987ed38be47894ec3b6a75d61817a2.stex" ]
+source_file="res://assets/Dialogue/obstacle.png"
+dest_files=[ "res://.import/obstacle.png-b1aa0b2807b836f906b4da5203f6caf7.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Formant_1.wav-cf157ec3d2c4b1d01b4d1c7f010175e4.sample"
+path="res://.import/Formant_1.wav-883d8ede678ca7487413a54bacd61888.sample"
 
 [deps]
 
-source_file="res://assets/Formant_1.wav"
-dest_files=[ "res://.import/Formant_1.wav-cf157ec3d2c4b1d01b4d1c7f010175e4.sample" ]
+source_file="res://assets/Dialogue/Formant_1.wav"
+dest_files=[ "res://.import/Formant_1.wav-883d8ede678ca7487413a54bacd61888.sample" ]
 
 [params]
 

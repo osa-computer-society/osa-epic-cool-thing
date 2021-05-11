@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/obstacle.png-8750f5009cb316b1822a7355dd2a4e4c.stex"
+path="res://.import/box-removebg-preview.png-5466d3822c590cb2ad61ce2345f653ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/obstacle.png"
-dest_files=[ "res://.import/obstacle.png-8750f5009cb316b1822a7355dd2a4e4c.stex" ]
+source_file="res://assets/Dialogue/box-removebg-preview.png"
+dest_files=[ "res://.import/box-removebg-preview.png-5466d3822c590cb2ad61ce2345f653ed.stex" ]
 
 [params]
 

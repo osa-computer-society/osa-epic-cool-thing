@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/coin-flip.wav-b816056003166917e17b338e8f768354.sample"
+path="res://.import/trap.wav-e97795502ebb3236d83f9db44c77a1b0.sample"
 
 [deps]
 
-source_file="res://assets/coin-flip.wav"
-dest_files=[ "res://.import/coin-flip.wav-b816056003166917e17b338e8f768354.sample" ]
+source_file="res://assets/Dialogue/trap.wav"
+dest_files=[ "res://.import/trap.wav-e97795502ebb3236d83f9db44c77a1b0.sample" ]
 
 [params]
 

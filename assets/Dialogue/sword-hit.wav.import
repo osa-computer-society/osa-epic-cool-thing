@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/switch9.wav-52ffe32fee6341300627d9b4986f525e.sample"
+path="res://.import/sword-hit.wav-27c5c8630c68b4afe4c982ed731504fb.sample"
 
 [deps]
 
-source_file="res://assets/switch9.wav"
-dest_files=[ "res://.import/switch9.wav-52ffe32fee6341300627d9b4986f525e.sample" ]
+source_file="res://assets/Dialogue/sword-hit.wav"
+dest_files=[ "res://.import/sword-hit.wav-27c5c8630c68b4afe4c982ed731504fb.sample" ]
 
 [params]
 

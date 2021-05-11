@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/trap.wav-1b43ad0ad2e97b5e1dd3e64bf94d9966.sample"
+path="res://.import/switch9.wav-f3f9b9081c98ecf9df8fca8fade22547.sample"
 
 [deps]
 
-source_file="res://assets/trap.wav"
-dest_files=[ "res://.import/trap.wav-1b43ad0ad2e97b5e1dd3e64bf94d9966.sample" ]
+source_file="res://assets/Dialogue/switch9.wav"
+dest_files=[ "res://.import/switch9.wav-f3f9b9081c98ecf9df8fca8fade22547.sample" ]
 
 [params]
 

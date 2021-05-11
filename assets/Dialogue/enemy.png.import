@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/settings cog.png-820277bc300371e70c2ccec00da0ba61.stex"
+path="res://.import/enemy.png-7c5330b3c36a85de86c97c7f392a8112.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/settings cog.png"
-dest_files=[ "res://.import/settings cog.png-820277bc300371e70c2ccec00da0ba61.stex" ]
+source_file="res://assets/Dialogue/enemy.png"
+dest_files=[ "res://.import/enemy.png-7c5330b3c36a85de86c97c7f392a8112.stex" ]
 
 [params]
 

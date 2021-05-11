@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/trap.png-9c7499ae7f996b16fbc4f8ae1a48bfe1.stex"
+path="res://.import/green bar.png-d0005de4c0bf89dce64972f3947bb5e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/trap.png"
-dest_files=[ "res://.import/trap.png-9c7499ae7f996b16fbc4f8ae1a48bfe1.stex" ]
+source_file="res://assets/Dialogue/green bar.png"
+dest_files=[ "res://.import/green bar.png-d0005de4c0bf89dce64972f3947bb5e7.stex" ]
 
 [params]
 

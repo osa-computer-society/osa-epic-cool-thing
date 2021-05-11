@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow bar.png-f14335754b6e3dd0bb68ed49f46a74a4.stex"
+path="res://.import/hud_background.png-0500f7da0012748d46537f6ac627f720.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/yellow bar.png"
-dest_files=[ "res://.import/yellow bar.png-f14335754b6e3dd0bb68ed49f46a74a4.stex" ]
+source_file="res://assets/Dialogue/hud_background.png"
+dest_files=[ "res://.import/hud_background.png-0500f7da0012748d46537f6ac627f720.stex" ]
 
 [params]
 
