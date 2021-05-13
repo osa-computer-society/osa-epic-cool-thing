@@ -94,6 +94,6 @@ func _input(event):
 	if event.is_action_pressed("ui_down"):
 		update_happiness(max(happiness - 10, 0))
 	elif event.is_action_pressed("ui_up"):
-		update_happiness(min(happiness + 5, 100))
+		update_happiness(min(happiness + 10, 100))
 	if event.is_action_pressed("interact") and interact_in_range != [] and not in_dialogue:
 		interact_in_range[0]._on_interact() 

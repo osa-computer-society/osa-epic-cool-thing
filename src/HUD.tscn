@@ -8,7 +8,14 @@
 pause_mode = 2
 script = ExtResource( 2 )
 
-[node name="SettingsButton" type="TextureButton" parent="."]
+[node name="Holder" type="ReferenceRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="TextureButton" parent="Holder"]
 margin_right = 300.0
 margin_bottom = 300.0
 rect_scale = Vector2( 0.2, 0.2 )
@@ -17,7 +24,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bars" type="VBoxContainer" parent="."]
+[node name="Bars" type="VBoxContainer" parent="Holder"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -45.0
@@ -26,17 +33,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Happiness" parent="Bars" instance=ExtResource( 3 )]
+[node name="Happiness" parent="Holder/Bars" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_right = 0.0
 margin_left = 0.0
 margin_right = 45.0
 
-[node name="Happiness2" parent="Bars" instance=ExtResource( 3 )]
+[node name="Happiness2" parent="Holder/Bars" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_right = 0.0
 margin_left = 0.0
 margin_top = 44.0
 margin_right = 45.0
 margin_bottom = 84.0
-[connection signal="pressed" from="SettingsButton" to="." method="_on_Settings_pressed"]
+
+[connection signal="pressed" from="Holder/SettingsButton" to="." method="_on_Settings_pressed"]

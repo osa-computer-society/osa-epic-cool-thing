@@ -23,7 +23,7 @@ position = Vector2( 32.8125, 0.1875 )
 texture = ExtResource( 4 )
 
 [editable path="Player"]
-
 [editable path="Player/DialogueBox"]
-
+[editable path="Player/Settings"]
+[editable path="Player/HUD"]
 [editable path="Node2D/InteractZone"]

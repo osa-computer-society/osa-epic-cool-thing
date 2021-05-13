@@ -57,3 +57,4 @@ current = true
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [editable path="Settings"]
+[editable path="HUD"]

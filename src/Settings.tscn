@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Settings.gd" type="Script" id=1]
 [ext_resource path="res://assets/mago32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/Choice.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/ChoiceController.gd" type="Script" id=4]
 
 [node name="Settings" type="CanvasLayer"]
 pause_mode = 2
@@ -14,36 +16,139 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+dropdowns = [ NodePath("ColorRect/SettingPanel"), NodePath("ColorRect/EquipPanel"), NodePath("ColorRect/ConsumablePanel"), NodePath("ColorRect/SkillsPanel") ]
 
 [node name="ColorRect" type="ColorRect" parent="Holder"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.41418
-margin_top = -1.41422
-margin_right = -1.41418
-margin_bottom = -1.41418
+margin_left = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingPanel" type="ColorRect" parent="Holder/ColorRect"]
+anchor_right = 1.0
+margin_top = -250.0
+color = Color( 0.843137, 0.811765, 0.811765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Holder/ColorRect/SettingPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.287
+margin_top = -35.2043
+margin_right = 14.7132
+margin_bottom = -5.20428
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "Settings dropdown"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EquipPanel" type="ColorRect" parent="Holder/ColorRect"]
+anchor_right = 1.0
+margin_top = -250.0
+color = Color( 0.843137, 0.811765, 0.811765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Holder/ColorRect/EquipPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.287
+margin_top = -35.2043
+margin_right = 14.7132
+margin_bottom = -5.20428
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "Equipment dropdown"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConsumablePanel" type="ColorRect" parent="Holder/ColorRect"]
+anchor_right = 1.0
+margin_top = -250.0
+color = Color( 0.843137, 0.811765, 0.811765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Holder/ColorRect/ConsumablePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.287
+margin_top = -35.2043
+margin_right = 14.7132
+margin_bottom = -5.20428
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "Consumable dropdown"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkillsPanel" type="ColorRect" parent="Holder/ColorRect"]
+anchor_right = 1.0
+margin_top = -250.0
+color = Color( 0.843137, 0.811765, 0.811765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Holder/ColorRect/SkillsPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.287
+margin_top = -35.2043
+margin_right = 14.7132
+margin_bottom = -5.20428
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "Skills dropdown"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Resume" type="Button" parent="Holder"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -90.0
-margin_top = -30.0
-margin_right = 90.0
-margin_bottom = 30.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -86.0
+margin_top = -31.0
 text = "resume"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Holder"]
+visible = false
 anchor_right = 1.0
-margin_top = 69.0
-margin_bottom = 95.0
+margin_left = 149.822
+margin_top = 41.5949
+margin_right = 149.823
+margin_bottom = 67.5949
 grow_horizontal = 0
 grow_vertical = 0
 rect_scale = Vector2( 4, 4 )
@@ -54,4 +159,75 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Choices" type="ColorRect" parent="Holder"]
+anchor_bottom = 1.0
+margin_right = 302.0
+color = Color( 0.839216, 0.815686, 0.815686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Holder/Choices"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = -3.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+active = true
+
+[node name="Label" parent="Holder/Choices/VBoxContainer" instance=ExtResource( 3 )]
+margin_right = 200.0
+margin_bottom = 147.0
+rect_min_size = Vector2( 0, 147 )
+rect_pivot_offset = Vector2( -304.934, 104.625 )
+text = "Settings"
+
+[node name="Label2" parent="Holder/Choices/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 151.0
+margin_right = 200.0
+margin_bottom = 298.0
+rect_min_size = Vector2( 0, 147 )
+text = "Equipment"
+
+[node name="Label3" parent="Holder/Choices/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 302.0
+margin_right = 200.0
+margin_bottom = 449.0
+rect_min_size = Vector2( 0, 147 )
+text = "Consumables"
+
+[node name="Label4" parent="Holder/Choices/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 453.0
+margin_right = 200.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 147 )
+text = "Skills"
+
+[node name="Label5" parent="Holder/Choices/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 604.0
+margin_right = 200.0
+margin_bottom = 751.0
+rect_min_size = Vector2( 0, 147 )
+text = "Resume"
+
+[node name="Label2" type="Label" parent="Holder"]
+margin_left = 340.972
+margin_top = 236.625
+margin_right = 558.972
+margin_bottom = 329.625
+rect_scale = Vector2( 4, 4 )
+custom_fonts/font = ExtResource( 2 )
+text = "put info about each member here"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Holder/Resume" to="Holder" method="_on_Resume_pressed"]
+[connection signal="accept_choice" from="Holder/Choices/VBoxContainer" to="Holder" method="_on_VBoxContainer_accept_choice"]

@@ -20,16 +20,17 @@ var name_label
 var choices_box
 var choice_boxes = {}
 var choices_container
-var choices
+var choices = []
 var syndibox
 var choice_index = 0
 var chose_next = false
+var choice_controller
 
 var current_node_id = -1 # handles the current node we are traversing Note: -1 exits the dialogue
 var current_node_name # name of the speaker 
 var current_node_text # dialogue text
 var current_node_next_id # connect to the next node Note: ignored if curent_node_choices has things inside
-var current_node_choices = [] # If you want more than one possible answear, you should fill this up
+var current_node_choices = [] # If you want more than one possible answer, you should fill this up
 var current_node_profile
 
 func grab_node(id):
@@ -99,10 +100,14 @@ func advance_dialogue():
 		player.in_dialogue = false
 	
 func turn_on_choice_box():
-	choices = []
 	choices_box = choice_boxes[len(current_node_choices)]
+	choice_controller = choices_box.get_child(0)
+	choice_controller.connect("accept_choice", self, "accept_choice")
 	choices_box.visible = true
 	choices_container = choices_box.get_child(0)
+	choice_controller.choices = []
+	choices = []
+	choice_controller.active = true
 	for n in choices_container.get_children():
 		choices_container.remove_child(n)
 		n.queue_free()
@@ -110,9 +115,10 @@ func turn_on_choice_box():
 		var text = ResourceLoad.choice_template.instance()
 		text.text = choice["text"]
 		choices_container.add_child(text)
-		choices.append([text, choice["next_id"]])
-	choice_index = 0
-	choices[choice_index][0].get_child(0).visible = true
+		choice_controller.choices.append(text)
+		choices.append(choice["next_id"])
+	choice_controller.choice_index = 0
+	choice_controller.choices[choice_index].get_child(0).get_child(0).visible = true
 	choices_box.visible = true
 	
 func start_dialogue():
@@ -125,23 +131,9 @@ func start_dialogue():
 		update_ui()
 		dialogue_box_holder.visible = true
 	
-func _input(event):
-	if dialogue_box.choice_box_open:
-		if event.is_action_pressed("ui_down"):
-			choices[choice_index][0].get_child(0).visible = false
-			choice_index -= 1
-			if choice_index == -1:
-				choice_index = len(current_node_choices) - 1
-			choices[choice_index][0].get_child(0).visible = true
-		elif event.is_action_pressed("ui_up"):
-			choices[choice_index][0].get_child(0).visible = false
-			choice_index += 1
-			if choice_index == len(current_node_choices):
-				choice_index = 0
-			choices[choice_index][0].get_child(0).visible = true
-		elif event.is_action_pressed("ui_accept"):
-			current_node_id = choices[choice_index][1]
-			dialogue_box.waiting_for_response = false
-			dialogue_box.choice_box_open = false
-			choices_box.visible = false
-			chose_next = true
+func accept_choice(index):
+	current_node_id = choices[index]
+	dialogue_box.waiting_for_response = false
+	dialogue_box.choice_box_open = false
+	choices_box.visible = false
+	chose_next = true

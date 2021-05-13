@@ -6,20 +6,31 @@
 load_path = "res://.import/PngItem_5152659.png-9655eda30c16073fecf430349a6d165d.stex"
 
 [node name="Label" type="Label"]
-margin_top = -1.0
-margin_right = 152.0
-margin_bottom = 49.0
+margin_right = 250.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
+rect_pivot_offset = Vector2( 0, 25 )
 custom_fonts/font = ExtResource( 1 )
-text = "sdfsdfsdfsdfsdfsdfs"
+text = "ddddd"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pointer" type="Sprite" parent="."]
+[node name="Anchor" type="Control" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 142.391, 21.1453 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pointer" type="Sprite" parent="Anchor"]
 visible = false
-position = Vector2( -20.3549, 28.845 )
+position = Vector2( -20.3549, 23.845 )
 scale = Vector2( 0.05, 0.05 )
 texture = SubResource( 1 )
