@@ -1,0 +1,157 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/box-removebg-preview.png" type="Texture" id=1]
+[ext_resource path="res://addons/SyndiBox/syndibox.gd" type="Script" id=2]
+[ext_resource path="res://assets/vert border filled.png" type="Texture" id=3]
+[ext_resource path="res://assets/mago32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/ChoiceController.gd" type="Script" id=5]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/vert border filled 3.png-05495f8bcaab6e3e95beab37162e59e8.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/vert border filled 3.png-05495f8bcaab6e3e95beab37162e59e8.stex"
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/vert border filled 2.png-18a039528557dc2bb9ab7c394a3ff056.stex"
+
+[node name="DialogueBox" type="CanvasLayer"]
+
+[node name="Canvas" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.843
+anchor_right = 0.5
+anchor_bottom = 0.843
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Canvas"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 80, 320, 80 )
+
+[node name="Name" type="Sprite" parent="Canvas"]
+visible = false
+position = Vector2( -129.449, -133.336 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 80, 320, 80 )
+
+[node name="Label" type="Label" parent="Canvas/Name"]
+anchor_left = -0.322
+anchor_top = -0.263
+anchor_right = 0.23
+anchor_bottom = 0.148
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Profile BG" type="Sprite" parent="Canvas"]
+visible = false
+position = Vector2( 189.251, -187.967 )
+scale = Vector2( 1, 1.017 )
+texture = SubResource( 1 )
+region_rect = Rect2( 0, 80, 320, 80 )
+
+[node name="Profile" type="TextureRect" parent="Canvas/Profile BG"]
+anchor_left = -0.43
+anchor_top = -0.26
+anchor_right = 0.21
+anchor_bottom = 0.375
+margin_left = -1.41583
+margin_top = -30.2184
+margin_right = 38.5842
+margin_bottom = 9.78165
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SyndiBox" type="ReferenceRect" parent="Canvas"]
+visible = false
+margin_left = -270.0
+margin_top = -55.0
+margin_right = 250.0
+margin_bottom = 55.8409
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+DIALOG = "asd"
+ENABLE_SCROLLBAR = false
+SCROLLBAR_FOLLOW = false
+FONT = "res://assets/mago32.tres"
+PAUSE_AT_PUNCTUATION = true
+CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
+
+[node name="Choices" type="Position2D" parent="Canvas"]
+position = Vector2( 0, -30 )
+
+[node name="4" type="Sprite" parent="Canvas/Choices"]
+visible = false
+position = Vector2( -164.395, -273 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Choices/4"]
+anchor_left = 0.066
+anchor_top = 0.05
+anchor_right = 0.931
+anchor_bottom = 0.95
+margin_left = -87.55
+margin_top = -114.45
+margin_right = -86.925
+margin_bottom = -114.55
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Sprite" parent="Canvas/Choices"]
+visible = false
+position = Vector2( -164.395, -244 )
+texture = SubResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Choices/3"]
+anchor_left = 0.066
+anchor_top = 0.05
+anchor_right = 0.931
+anchor_bottom = 0.95
+margin_left = -87.55
+margin_top = -114.45
+margin_right = -86.925
+margin_bottom = -114.55
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Sprite" parent="Canvas/Choices"]
+visible = false
+position = Vector2( -164.395, -215 )
+texture = SubResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Choices/2"]
+anchor_left = 0.066
+anchor_top = 0.05
+anchor_right = 0.931
+anchor_bottom = 0.95
+margin_left = -87.55
+margin_top = -55.75
+margin_right = -86.925
+margin_bottom = -55.85
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
