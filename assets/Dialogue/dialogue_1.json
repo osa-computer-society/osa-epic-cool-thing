@@ -12,7 +12,6 @@
           "text": "Yes",
           "next_id": 1
         },
-
         {
           "text": "No",
           "next_id": -1

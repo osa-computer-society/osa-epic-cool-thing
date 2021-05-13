@@ -1,9 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/box-removebg-preview.png" type="Texture" id=1]
+[ext_resource path="res://assets/Dialogue/box-removebg-preview.png" type="Texture" id=1]
 [ext_resource path="res://addons/SyndiBox/syndibox.gd" type="Script" id=2]
-[ext_resource path="res://assets/vert border filled.png" type="Texture" id=3]
-[ext_resource path="res://assets/mago32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/Dialogue/vert border filled.png" type="Texture" id=3]
+[ext_resource path="res://assets/Dialogue/mago32.tres" type="DynamicFont" id=4]
+
 
 [sub_resource type="StreamTexture" id=3]
 load_path = "res://.import/vert border filled 3.png-05495f8bcaab6e3e95beab37162e59e8.stex"
@@ -85,7 +86,7 @@ __meta__ = {
 DIALOG = "asd"
 ENABLE_SCROLLBAR = false
 SCROLLBAR_FOLLOW = false
-FONT = "res://assets/mago32.tres"
+FONT = "res://assets/Dialogue/mago32.tres"
 PAUSE_AT_PUNCTUATION = true
 CUSTOM_EFFECTS = "res://addons/SyndiBox/custom.gd"
 

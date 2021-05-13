@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/green bar.png" type="Texture" id=1]
-[ext_resource path="res://assets/mago32.tres" type="DynamicFont" id=2]
-[ext_resource path="res://src/StatusBar.gd" type="Script" id=3]
+[ext_resource path="res://assets/Dialogue/green bar.png" type="Texture" id=1]
+[ext_resource path="res://assets/Dialogue/mago32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/StatusBar/StatusBar.gd" type="Script" id=3]
+
 
 [node name="Bar" type="Control"]
 anchor_left = 1.0
